@@ -49,21 +49,21 @@ const std::string& getWorkspaceFromMonitor(CMonitor* monitor, const std::string&
 
 void splitWorkspace(std::string workspace)
 {
-    CMonitor* monitor = g_pCompositor->getMonitorFromCursor();
+    CMonitor* monitor = g_pCompositor->m_pLastMonitor;
 
     HyprlandAPI::invokeHyprctlCommand("dispatch", "workspace " + getWorkspaceFromMonitor(monitor, workspace));
 }
 
 void splitMoveToWorkspace(std::string workspace)
 {
-    CMonitor* monitor = g_pCompositor->getMonitorFromCursor();
+    CMonitor* monitor = g_pCompositor->m_pLastMonitor;
 
     HyprlandAPI::invokeHyprctlCommand("dispatch", "movetoworkspace " + getWorkspaceFromMonitor(monitor, workspace));
 }
 
 void splitMoveToWorkspaceSilent(std::string workspace)
 {
-    CMonitor* monitor = g_pCompositor->getMonitorFromCursor();
+    CMonitor* monitor = g_pCompositor->m_pLastMonitor;
 
     HyprlandAPI::invokeHyprctlCommand("dispatch", "movetoworkspacesilent " + getWorkspaceFromMonitor(monitor, workspace));
 }
