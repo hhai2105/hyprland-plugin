@@ -1,0 +1,5 @@
+build/
+.cache/
+*.so
+compile_flags.txt
+result/ 
